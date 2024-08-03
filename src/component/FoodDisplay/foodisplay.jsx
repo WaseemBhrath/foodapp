@@ -1,24 +1,35 @@
-// Foodisplay.js
 import React, { useContext } from 'react';
 import './foodisplay.css';
-import { storeContext } from '../Context/storeContext';
+import { StoreContext } from '../Context/storeContext';
+import Fooditem from '../Fooditem/Fooditem';
 
 const Foodisplay = ({ Category }) => {
-    const context = useContext(storeContext);
+    const context = useContext(StoreContext);
 
-    // Check if context is undefined
     if (!context) {
-        return <div>Error: Context is not provided</div>;
+        return (
+            <div>No context available</div>
+        );
     }
 
     const { food_list } = context;
+    // let cats = food_list?.map((li) => console.log(li.))
+    // console.log(Category);
+    
 
     return (
-        <div className="food-list">
+        <div className="food-display" id='food-display'>
             <h1>Favourite Dishes Near You</h1>
-            {food_list.map((food, index) => (
-                <div key={index}>{food}</div>
-            ))}
+          <div className="fooditem-display-list">
+            {food_list.map((item,index)=>{
+               if(Category==="All" ||Category=== item.category){
+                return <Fooditem key={index} id={item._id} name={item.name} description={item.description} price={item.price} image={item.image}/>
+               }
+               
+
+            })}
+
+          </div>
         </div>
     );
 };

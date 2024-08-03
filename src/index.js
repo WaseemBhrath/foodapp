@@ -5,12 +5,13 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import StoreContext from './component/Context/storeContext';
+import StoreContextProvider from './component/Context/storeContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <storeContextProvider>
+    <StoreContextProvider>
          <App/>
-     </storeContextProvider>
+     </StoreContextProvider>
    
   
   
