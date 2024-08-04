@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Navbar.css";
 import { assets } from "../../assets/assets";
 
-export default function Navbar() {
+export default function Navbar({setshowLogin}) {
   let [menu, setmenu] = useState("Home");
   return (
     <div className="navbar">
@@ -10,10 +10,7 @@ export default function Navbar() {
       <ul className="navbar_menu">
         <li
           onClick={() => setmenu("Home")}
-          className={menu == "Home" ? "active" : ""}
-        >
-          Home
-        </li>
+          className={menu == "Home" ? "active" : ""}> Home</li>
         <a href="#exploremenu"
           onClick={() => setmenu("Menu")}
           className={menu == "Menu" ? "active" : ""}
@@ -39,7 +36,7 @@ export default function Navbar() {
           <img src={assets.basket_icon} alt="basket icon" />
           <div className="dot"></div>
         </div>
-        <button>Sign in</button>
+        <button onClick={()=>setshowLogin(true)}>Sign in</button>
       </div>
     </div>
   );
