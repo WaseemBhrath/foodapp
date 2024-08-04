@@ -14,24 +14,24 @@ export default function Navbar() {
         >
           Home
         </li>
-        <li
+        <a href="#exploremenu"
           onClick={() => setmenu("Menu")}
           className={menu == "Menu" ? "active" : ""}
         >
           Menu
-        </li>
-        <li
+        </a>
+        <a href="#App-download"
           onClick={() => setmenu("Mobile App")}
           className={menu == "Mobile App" ? "active" : ""}
         >
           Mobile App
-        </li>
-        <li
+        </a>
+        <a href="#footer"
           onClick={() => setmenu("Contact us")}
           className={menu == "contact us" ? "active" : ""}
         >
           Contact us
-        </li>
+        </a>
       </ul>
       <div className="navbar_right">
         <img src={assets.search_icon} alt="search icon" />
