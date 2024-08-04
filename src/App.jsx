@@ -8,9 +8,11 @@ import {
 import Home from './Pages/Home/home';
 import Cart from './Pages/Cart/cart';
 import Placeorder from './Pages/Placeorder/placeorder';
+import Footer from './component/Footer/Footer';
 
 function App() {
   return (
+    <>
     <div className="App">
       <Navbar/>
       <Router> 
@@ -21,6 +23,8 @@ function App() {
         </Routes>
       </Router>
     </div>
+    <Footer/>
+    </>
   );
 }
 
