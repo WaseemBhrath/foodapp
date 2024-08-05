@@ -18,9 +18,20 @@ const Addtocart=(itemId)=>{
         setcartitem((prev)=>({...prev,[itemId]:prev[itemId]-1}))
 
     }
-    useEffect(()=>{
-     console.log(cartitem);
-    },[cartitem])
+  const getTotalAmount = ()=>{
+    let totalAmount=0;
+    for (const item in cartitem)
+    {
+        if (cartitem[item]>0) {
+            let iteminfo=food_list.find((product)=>product._id===item);
+            totalAmount+= iteminfo.price*cartitem[item];
+
+            
+        }
+     
+    }
+    return totalAmount;
+  }
 
 
     const contextValue = {
@@ -28,7 +39,8 @@ const Addtocart=(itemId)=>{
         cartitem,
         setcartitem,
         Addtocart,
-        removefromcart
+        removefromcart,
+        getTotalAmount
     };
 
     return (

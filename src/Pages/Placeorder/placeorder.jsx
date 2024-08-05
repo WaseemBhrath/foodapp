@@ -3,6 +3,8 @@ import './placeorder.css'
 
 export default function placeorder() {
   return (
-    <div>placeorder</div>
+    <div>
+      <h2>Placeorder</h2>
+    </div>
   )
 }
