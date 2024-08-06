@@ -46,15 +46,15 @@ export default function Cart() {
           <h2>Cart Total</h2>
           <div className="cart-total-detail">
             <p>Subtotal</p>
-            <p>${getTotalAmount()}</p>
+            <p>${getTotalAmount()===0?0:getTotalAmount()}</p>
           </div>
           <div className="cart-total-detail">
             <p>Delivery Fee</p>
-            <p>{2}</p>
+            <p>${getTotalAmount()===0?0:2}</p>
           </div>
           <div className="cart-total-detail">
             <b>Total</b>
-            <b>${getTotalAmount()+2}</b>
+            <b>${getTotalAmount()===0?0:getTotalAmount()+2}</b>
           </div>
           <button onClick={()=>navigate('/placeorder')}>Proceed To CheckOut</button>
         </div>

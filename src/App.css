@@ -8,3 +8,7 @@ font-family: Outfit;
   width: 80%;
   margin: auto;
 }
+
+a {
+  text-decoration: none;
+}
